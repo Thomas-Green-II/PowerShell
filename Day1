@@ -73,6 +73,27 @@ stay as a string
 [float]
 
 
+
+
+
+ARRAYS
+To compare an array to null:
+if ( $array.Count -eq 0) { write-host "empty like my mind"}
+
+$array=@()   <------- creates an empty array
+$number_arr = 4,5,6   <------- creates an array called $number_ar with the values of 4,5,6 inside of it
+[array]$blank_array = $null    <------- does not work because an array needs an actual value... not null
+
+$x = "waifu for lifu"
+$x -is [array]
+> False
+
+$poly_array = (get-computerinfo), "help me, im trapped", 6472       <----- an arrray of different item types... the () says execute this command first
+> Prints the entire output for the command as well as the string and the number, but still counts it as three objects in the array
+
+
+
+
 NEED TO KNOW AUTOMATIC VARIABLES
 $_             <-------- current object in the pipeline
 $args          <-------- array of values for undeclared paramters
