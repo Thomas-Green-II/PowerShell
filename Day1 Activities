@@ -1,0 +1,138 @@
+# ACTIVITY 1
+
+#1 Ensure that you have the latest copy of help by updating your help system.
+update-help
+
+
+#2 Which cmdlets deal with the viewing/manipulating of processes?
+get-process
+Start-Process
+stop-process
+debug-process
+wait-process
+
+#3 Display a list of services installed on your local computer.
+get-service 
+
+
+#4 What cmdlets are used to write or output objects or text to the screen?
+write-output
+write-host
+
+#5 What cmdlets can be used to create, modify, list, and delete variables?
+get-variable
+set-variable 
+new-variable
+remove-variable
+
+
+#6 What cmdlet can be used, other than Get-Help, to find and list other cmdlets?
+get-command
+
+
+#7 Find the cmdlet that is used to prompt the user for input.
+read-host
+
+
+
+
+
+# ACTIVITY 2
+
+#Display a list of running processes.
+get-process
+
+#Display a list of all running processes that start with the letter "s".
+Get-Process -name s*
+
+#Find the cmdlet and its purpose for the following aliases:
+
+
+#gal
+get-alias
+ The `Get-Alias` cmdlet gets the aliases in the current session.
+#dir
+Get-ChildItem
+The `Get-ChildItem` cmdlet gets the items in one or more specified locations.
+#echo
+Write-Output
+This cmdlet is typically used in scripts to display strings and other objects on the console.
+#?
+where-object
+The `Where-Object` cmdlet selects objects that have particular property values from the collection of objects that are passed to it.
+
+#%
+ForEach-Object
+The `ForEach-Object` cmdlet performs an operation on each item in a collection of input objects.
+
+#ft
+Format-Table
+The `Format-Table` cmdlet formats the output of a command as a table with the selected properties of the object in each column.
+
+#Display a list of Windows Firewall Rules.
+get-netfirewallrule
+
+#Create a new alias called "gh" for the cmdlet "Get-Help"
+set-alias gh get-help
+
+
+
+
+
+# ACTIVITY 3
+
+# Create a variable called "var1" that holds a random number between 25-50.
+
+$var1 = Get-Random -Minimum 25 -Maximum 50
+# Create a variable called "var2" that holds a random number between 1-10.
+
+$var2 = Get-Random -Minimum 1 -Maximum 10
+# Create a variable called "sum" that holds the sum of var1 and var2.
+
+$sum = $var1 + $var2
+# Create a variable called "sub" that holds the difference of var1 and var2.
+
+$sub = $var1 - $var2
+# Create a variable called "prod" that holds the product of var1 and var2.
+
+$prod = $var1 * $var2
+# Create a variable called "quo" that holds the quotient of var1 and var2.
+
+$quo = $var1 / $var2
+# Replace the variables in text with their values in the following format:
+
+
+write-host "$var1" + "$var2" = "$sum"
+
+
+# Replace the variables in text with their values in the following format:
+
+
+write-host "$var1" - "$var2" = "$sub"
+
+
+# Replace the variables in text with their values in the following format:
+
+
+write-host "$var1" * "$var2" = "$prod"
+
+
+# Replace the variables in text with their values in the following format:
+
+
+write-host "$var1" / "$var2" = "$quo"
+
+
+
+# ACTIVITY 4
+
+# Create an array containing a range with a random starting and stopping point.  The starting point will be a random number from -10 through 0.
+# The ending point will be a random number from 1 through 20.
+
+$var1 = Get-Random -Minimum -10 -Maximum 0
+$var2 = Get-Random -Minimum 1 -Maximum 20
+
+$arr = $var1..$var2
+
+# Create a variable that contains the contents of the array in reverse
+$arr2 = $arr[-1]..$arr[0]
