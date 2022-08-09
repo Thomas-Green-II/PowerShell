@@ -98,6 +98,45 @@ $seq.nums[-1]     <------- grabs the last index of the list
 $seq_nums[1,41,20,4]    <------- grabs the value at index 1, 41, 20, and 4
 
 
+
+
+
+
+
+JAGGED ARRAYS     <----- Nested arrays
+
+$array = {1,2,3}
+$nested = @,!,$array,#
+Powershell interpretation : {@,!,{1,2,3},#}
+Human View
+@,                            =              @,$null,$null
+!,                            =              !,$null,$null
+1,   2,   3                   =              1,2,3
+#,                            =              #,$null,$null
+
+nested[2] = 1,2,3
+$nested[2][1] = 2
+nested[3][1] = $error
+
+
+
+MULTIDIMENSIONAL ARRAY
+$mult = tri, square, $nested, cir
+Powershell Interpretation: {tri, square, {@,!,{1,2,3},#},cir}
+Human View
+tri, $null, $null, $null
+square, $null, $null, null
+@    , !  , 1  , #
+$null, $null, 2 , $null
+$null,$null, 3 , $null
+cir, $null, $null, $null
+
+$multi[2] = @,!,{1,2,3},#
+$multi[2][2] = 1,2,3
+$multi[2][2][1] = = 2
+multi[1][2][3] = $error
+
+
 NEED TO KNOW AUTOMATIC VARIABLES
 $_             <-------- current object in the pipeline
 $args          <-------- array of values for undeclared paramters
