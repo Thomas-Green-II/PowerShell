@@ -76,7 +76,7 @@ stay as a string
 
 
 
-ARRAYS
+ARRAYS    <----- a list that can be indexed through
 To compare an array to null:
 if ( $array.Count -eq 0) { write-host "empty like my mind"}
 
@@ -91,7 +91,11 @@ $x -is [array]
 $poly_array = (get-computerinfo), "help me, im trapped", 6472       <----- an arrray of different item types... the () says execute this command first
 > Prints the entire output for the command as well as the string and the number, but still counts it as three objects in the array
 
+$poly_arr[1]   <------- grabs index one (object 2) of an array
 
+$seq_nums = 4..50   <------ outs every number 4-50 in an array
+$seq.nums[-1]     <------- grabs the last index of the list
+$seq_nums[1,41,20,4]    <------- grabs the value at index 1, 41, 20, and 4
 
 
 NEED TO KNOW AUTOMATIC VARIABLES
