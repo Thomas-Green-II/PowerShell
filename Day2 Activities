@@ -59,6 +59,20 @@ Get-hotfix | sort -property installedon | select-object -property installedon,ho
 Get-hotfix | sort -property description | select-object -property description,installedon,hotfixid
 
 
+_______________________________________________________ACTIVITY 7______________________________________________________________________________________________
+
+$compinfo = Get-WmiObject Win32_ComputerSystem
+$osinfo = Get-WmiObject Win32_OperatingSystem
+$biosinfo = Get-WmiObject Win32_BIOS
+$diskinfo = Get-WmiObject Win32_LogicalDisk
+
+$mycomp = New-Object object
 
 
+$mycomp | Add-Member -MemberType NoteProperty -Name ComputerName -Value $compinfo.Name
+$mycomp | Add-Member -MemberType NoteProperty -Name OperatingSystem -Value $osinfo.Caption
+$mycomp | Add-Member -MemberType NoteProperty -Name Version -Value $osinfo.info
+$mycomp | Add-Member -MemberType NoteProperty -Name Manufacturer -Value $biosinfo.Manufacturer
+$mycomp | Add-Member -MemberType NoteProperty -Name Disks -force -Value $diskinfo.DeviceID
 
+$mycomp
