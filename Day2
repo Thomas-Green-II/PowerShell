@@ -1,0 +1,33 @@
+HASH TABLES
+Work on Key-value pairs, rather than objects themselves
+$hashy = @{}      <------- declare an empty hash table
+$hashy = @{key="value" ; key2="value2"}     <---- declare a hash table with multiple values
+> name = key        >value = value
+$hashy.gettype()
+> hashtable
+
+$another = @{}
+$another.IS_Anime = "yes"
+Key/name = IS.Anime        value = yes
+
+$another["IS_Good"] = "depends"
+key/name = IS.Anime        value = yes
+key/name = IS_Good         value = depends
+
+$another.Add("OPM","Saitama")
+key/name = IS.Anime        value = yes
+key/name = IS_Good         value = depends
+key/name = OPM             value = Saitama
+
+
+ORDERED HASH TABLE
+$ordered = [ordered]@{}      <------ in order to make an ordered hash table you have to declare [ordered] the first time you add something to the hash table
+$ordered."McDonalds" = @("BigMac" , "1 Chiccy Nuggy" , "7 Happy Meals", "1 Filet-of-Fish")    <---- adds an array with the key of Mcdonalds
+$ordered["Chik-fil-A"]="2 Spicy Chicken Sandwiches"    <------ adds the key Chik-fil-a with the value of "2 Spicy Chicken Sandwiches"
+$ordered.Add("Taco Bell", "a bad time")     <-------- adds the key taco bell with the value of a bad time
+$ordered.'Chik-fil-A'    <------- References the exact value for the key of chik-fil-a
+
+$ordered["McDonalds","Taco Bell"]     <------- References multiple keys to grab the values for 
+
+$ordered.Keys      <----- shows just the keys in a hash table
+$ordered.Values    <----- shows just the values in a hash table
