@@ -258,7 +258,7 @@ Switch(10)
   
   
   
-  DO
+  DO WHILE
   do {}
     code block
   }while(condition)
