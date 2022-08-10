@@ -96,3 +96,47 @@ Format-Wide
 
 
 
+MAKING OBJECTS
+
+Create new object using New-Object
+$mycar = New-object object
+
+Adding properties using add-member
+Add-member -MemberType NoteProperty -name Color -value "blue-gray green turqouis Thing" -InputObject $mycar
+
+Adding using shortened parameter names
+Add-member -MemberType NoteProperty -name Make -value "Hondyota Fordoma" -InputObject $mycar
+
+Adding using positional parameters
+Add-member -InputObject $mycar NoteProperty Model "Model Cherokee X Sport Maximus"
+
+Adding through a pipeline
+$mycar | add-member NoteProperty Cab "Big, Very Big Extended Quad Cab"
+
+Add-member -Membertype ScriptMethod -Name Read -value {"I'm not entirely sure this book is appropriate."} -InputObject $mycar
+
+Add-member -membertype scriptmethod -name cook -value {"I hope my oil is human-friendly; It's all over everything"} -InputObject $mycar
+
+Add-member -membertype scriptmethod -Name Drive -value {"Are you sure?"} -InputObject $mycar
+
+Add-member -methodtype scriptmethod -name Script -value {"Give me all your parameters. I shall do it!"} -InputObject $mycar
+
+
+$mycar.color    <------  Calling an object's property
+$mycar.drive()  <------  Calling an objects attribute
+
+
+
+
+CONDITIONALS
+Always compares to the items on the left
+"abc" -eq "abc", "def"      FALSE
+"abc", "def" -eq "abc"      TRUE
+
+7,8,9 -gt 8                 9
+
+7,8,9 -lt 9                 7,8
+
+
+
+
