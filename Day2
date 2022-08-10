@@ -144,19 +144,19 @@ Always compares to the items on the left
 
 CONDITIONALS (LIKE, UNLIKE, MATCH, CONTAINS)
 
-Like  - Works on wildcards
+Like  - WILDCARDS
 "Inky" -like "*"            TRUE          <------ * = everything
 "Blinky" -like "Bl?nky"     TRUE          <------ ? = any one character
 "Pinky" -like "[L-Q]inky"   TRUE          <------ [-] = letters falling between, in this case, L and Q
 "Clyde" -like "[ABC]lyde"   TRUE          <------ [] = letters in a list
 
-NotLike
+NotLike - WILDCARDS
 "Inky" -notlike "*"            FALSE
 "Blinky" -notlike "Bli?nky"    TRUE
 "Pinky" -notlike "[A-F]inky"   TRUE
 "Clyde" -notlike "[DEF]lyde"   TRUE
 
-Match
+Match - REGEX
 $text = "Your account username is ACE4495"
 $pattern = '([A-F{3})(\d{4})'                               <-------- 3 letters A-F followed by 4 numbers
 $text -match $pattern                         TRUE
@@ -164,6 +164,12 @@ $text -match $pattern                         TRUE
 Contains
 $ghosts = 'Inky', 'Blinky', 'Pinky', 'Clyde'
 $ghosts - contains 'pinky'                    TRUE
+
+
+
+COMBINING CONDITIONALS
+-and
+-or
 
 
 
