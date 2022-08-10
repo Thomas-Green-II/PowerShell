@@ -65,6 +65,19 @@ Get-Process svchost | select-object handles <------- grabs a portion of the outp
 OR
 (get-process svchost).handles
 
+Get-Process | select-object -first 10    <------ grabs the first 10 objects of the output
+Get-Process | select-object -last 10     <------ grabs the last 10 objects of the output
+1,2,3,1,2,3,1,2,3,1,2,3 | sort | get-unique   <---- you must sort a list before trying to get the unique objects from it
+get-childitem | measure-object length         <----- grabs the length of the cmdlet used, you can then set extra parameters (ie -average) to find the
+other info:
+Count    : 4327
+Average  : 
+Sum      : 
+Maximum  : 
+Minimum  : 
+Property : length
+
+
 
 
 WRITE-HOST VS WRITE-OUTPUT
