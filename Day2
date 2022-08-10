@@ -31,3 +31,7 @@ $ordered["McDonalds","Taco Bell"]     <------- References multiple keys to grab 
 
 $ordered.Keys      <----- shows just the keys in a hash table
 $ordered.Values    <----- shows just the values in a hash table
+
+
+
+
