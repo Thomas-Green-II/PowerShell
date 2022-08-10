@@ -128,7 +128,7 @@ $mycar.drive()  <------  Calling an objects attribute
 
 
 
-CONDITIONALS
+CONDITIONALS (BASICS)
 Always compares to the items on the left
 "abc" -eq "abc", "def"      FALSE
 "abc", "def" -eq "abc"      TRUE
@@ -137,6 +137,33 @@ Always compares to the items on the left
 
 7,8,9 -lt 9                 7,8
 
+5,6,7 -ge 6                 6,7
+
+5,6,7 -le 6                 5,6
+
+
+CONDITIONALS (LIKE, UNLIKE, MATCH, CONTAINS)
+
+Like  - Works on wildcards
+"Inky" -like "*"            TRUE          <------ * = everything
+"Blinky" -like "Bl?nky"     TRUE          <------ ? = any one character
+"Pinky" -like "[L-Q]inky"   TRUE          <------ [-] = letters falling between, in this case, L and Q
+"Clyde" -like "[ABC]lyde"   TRUE          <------ [] = letters in a list
+
+NotLike
+"Inky" -notlike "*"            FALSE
+"Blinky" -notlike "Bli?nky"    TRUE
+"Pinky" -notlike "[A-F]inky"   TRUE
+"Clyde" -notlike "[DEF]lyde"   TRUE
+
+Match
+$text = "Your account username is ACE4495"
+$pattern = '([A-F{3})(\d{4})'                               <-------- 3 letters A-F followed by 4 numbers
+$text -match $pattern                         TRUE
+
+Contains
+$ghosts = 'Inky', 'Blinky', 'Pinky', 'Clyde'
+$ghosts - contains 'pinky'                    TRUE
 
 
 
