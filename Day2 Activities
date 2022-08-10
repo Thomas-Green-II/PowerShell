@@ -1,1 +1,64 @@
+# ACTIVITY 5
+Create two empty hash tables with the following names:
+
+$employee1 = @{}
+$employee2 = @{}
+
+
+# Using the following table of key-value pairs, apply each key-value to the empty hash tables.
+$employee1.Add("First","Mary")
+$employee1.Add("Last","Hopper")
+$employee1.Add("ID","001")
+$employee1.Add( "JOB","Software Developer")
+
+
+$employee2.Add("First","John")
+$employee2.Add("Last","Williams")
+$employee2.Add("ID","002")
+$employee2.Add("Job","Web Developer")
+
+# Now add a new key called Username which holds a contraction of the employee’s first initial then last name then ID. (i.e. mhopper001).
+$employee1.Add("Username","mhopper001")
+$employee2.Add("Username","jwilliams002")
+
+# Mary got promoted to "Software Lead" so the job key for Mary needs to be changed to "Software Lead"
+$employee1["Job"] = "Software Lead"
+
+# Create a new hash table called "employee3" that contains the following values with the respective keys.
+$employee3 = @{}
+$employee3.Add("First","Alex")
+$employee3.Add("Last","Moran")
+$employee3.Add("ID","003")
+$employee3.Add("Job","Software Developer")
+
+# Add a new key called "Status" that holds the values:
+$employee1.Add("Status","Management")
+$employee2.Add("Status","Intermediate")
+$employee3.Add("Status","Entry Level")
+
+
+
+
+# ACTIVITY 2
+
+# Display the start time of the earliest and latest running processes
+get-process | where-object processname -ne "Idle" | sort -property starttime | select-object -first 1 -last 1 | format-table name,starttime
+
+# Identify a cmdlet that returns the current date and time then using this cmdlet and Select-object, display only the current day of the week
+Get-Date | select-object -Property Dayofweek
+# or
+(get-date).DayofWeek
+
+# Identify a cmdlet that displays a list of installed hotfixes.
+get-hotfix
+
+# Extend the expression to sort the list by install date, and display only the install date and hotfix ID.
+Get-hotfix | sort -property installedon | select-object -property installedon,hotfixid
+
+# Extend the expression further, but this time sort by description, include description, hotfix ID, and install Date.
+Get-hotfix | sort -property description | select-object -property description,installedon,hotfixid
+
+
+
+
 
