@@ -244,8 +244,69 @@ Switch(10)
   }
   
   
+  WHILE
+  while(condition) {
+    code block to be exected
+  }
+  
+  example:
+  
+  num = 4
+  while($num -lt -lt 3){$num; $num++ }
+  
+  $num
   
   
   
+  DO
+  do {}
+    code block
+  }while(condition)
   
-  
+example:
+$num = 4
+do{
+  $num
+  $num++
+}while(num -lt 3)
+
+
+
+DO UNTIL
+$num = 4
+do{
+  $num
+  $num++
+}until(num -gt 3)
+$num
+
+
+CONTINUE - Go back to the beginning of a loop
+$num = 0
+while($num -lt 4) {
+  $num += 1
+  if(num -eq 2) {
+    continue
+  }
+  $num
+}
+
+
+BREAK - Leaves the loop once an instance has been found
+$num = 0
+while($num -lt 10) {
+  $num += 1
+  if(num -eq 5) {
+    break
+  }
+  $num
+}
+
+
+
+READING AND WRITING TO A FILE
+Get-Content  .\example.txt                                <---- Read a file, the output is an array which makes each thing inside an element to reference
+(Get-Content .\example.txt)[0]                            <----- Grabs index 0 of example.txt
+Set-Content  -path .\example.txt -value "A string"        <----- Overwrite to a file
+Add-Content -path .\example.txt -value "Another string"   <----- Appends to a file
+
