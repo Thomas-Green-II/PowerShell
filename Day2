@@ -38,13 +38,28 @@ $ordered.Values    <----- shows just the values in a hash table
 
 
 
-PIPING      <----- Powershell is object oriented so it is slightly different from bash
-get-service | get-member  <----- pipes the result from a list of services into their attributes, this is giving us more information than just get-service
+PIPING                           <----- Powershell is object oriented so it is slightly different from bash
+get-service | get-member         <----- pipes the result from a list of services into their attributes, this is giving us more information than just get-service
 
 get-member gives us a cmdlet's, and other object's, methods and properties
-(get-service bfe).StartType      <-------- a cmdlet in parentheses grabs all of the cmdlet and sets it as an object
-(service).stop     <------ stops a service
+(get-service bfe).StartType      <------ a cmdlet in parentheses grabs all of the cmdlet and sets it as an object
+(service).stop                   <------ stops a service
 
+get-service sorts itself aplhabetically by default, but to change it to sort by the status of the services:
+get-service | sort-object -Property status          <------ property status is known to sort with because of get-service | get-member
+get-service | sort-object -Property status, name    <------ sorts on status first, then the name of the service
+get-service | groupt-object -Property status        <------ counts how many there are of each status rather than listing them in order
+1, 7, 10, 8, 2, 3 | sort                            <------ sorts numerically
+"1", "7", "10", "8", "2", "3" | sort                <------ sorts by ASCII
+"1", "7", "10", "8", "2", "3" | sort -property { [Int]$_ }      <------- puts the order of these strings in order by their numerical representation
+1..10 | sort -property { get-random }
+
+
+
+
+FILTERING
+Where-object is the best cmdlet for filtering because is filters based on given terms
+get-service | where-object { $_.Status -eq "Running }    <----- only grabs the services that are running
 
 
 
@@ -60,10 +75,5 @@ Format-Table
 Format-Wide                                                       
 
 
-
-SCRIPT BLOCKS
-$myblock = { et-service | format-table name, status  
-
-& $myblock
 
 
