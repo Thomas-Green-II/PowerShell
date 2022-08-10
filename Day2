@@ -7,14 +7,14 @@ $hashy.gettype()
 > hashtable
 
 $another = @{}
-$another.IS_Anime = "yes"
+$another.IS_Anime = "yes"                    <------- use this one to edit already added keys/values
 Key/name = IS.Anime        value = yes
 
-$another["IS_Good"] = "depends"
+$another["IS_Good"] = "depends"              <------- use this one to edit already added keys/values
 key/name = IS.Anime        value = yes
 key/name = IS_Good         value = depends
 
-$another.Add("OPM","Saitama")
+$another.Add("OPM","Saitama")                <------ use this one to add keys/values
 key/name = IS.Anime        value = yes
 key/name = IS_Good         value = depends
 key/name = OPM             value = Saitama
