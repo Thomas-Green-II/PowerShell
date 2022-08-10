@@ -219,3 +219,33 @@ Switch(10)
    
    
   
+  
+  LOOPS
+  foreach vs foreach object
+  foreach needs to go through the entire loop before output
+  foreach object can process output while execution
+  
+  FOREACH
+  foreach ($item in expression)
+  {
+    code block to be executed
+  }
+  
+  
+  FOREACH OBJECT
+  $object | foreach-object {code block to be executed}
+  
+  
+  
+  FOR
+  for (initialization; condition; increment)
+  {
+    code block to be executed
+  }
+  
+  
+  
+  
+  
+  
+  
