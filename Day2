@@ -61,6 +61,10 @@ FILTERING
 Where-object is the best cmdlet for filtering because is filters based on given terms
 get-service | where-object { $_.Status -eq "Running }    <----- only grabs the services that are running
 
+Get-Process svchost | select-object handles <------- grabs a portion of the output to filter out, in this case I'm grabbing the colum called handles
+OR
+(get-process svchost).handles
+
 
 
 WRITE-HOST VS WRITE-OUTPUT
