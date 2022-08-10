@@ -171,5 +171,51 @@ COMBINING CONDITIONALS
 -and
 -or
 
+USING CONDITIONALS in EXAMPLES
+show all text files with sizes greater than 100
+Get-childitem *.txt | where-object{$_.length -gt 100}
+
+Display all processes whose company name begins with 'micro'
+get-process | where-object {$_.company -like 'micro*'} | format-table Name, Description, Company
 
 
+BASIC IF
+$x = 2
+
+if ($x -eq 5) {
+  write-host "bob"
+}
+elseif ($x -eq 4) {
+  write-Host "Sue"
+}
+elseif ($x -eq 2) {
+  write-host "Tom"
+}
+elseif 9$x -gt 1) {
+  Write-host "Mary"
+}
+else
+  "who am i"
+  
+
+
+
+EXAMPLE OF A SWITCH     <----- if statement for anything contained inside the (), executes everything the switch matches
+Switch(10)
+{
+  (1+9) {
+    "congrats, you did adds right"
+   }
+   (1+10) {
+    "you did bad"
+   }
+    (11-1) {
+      "minus good"
+   }
+    (1-11) {
+     "minus bad"
+   }
+}
+   
+   
+  
