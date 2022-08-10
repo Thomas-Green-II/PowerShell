@@ -39,6 +39,7 @@ $ordered.Values    <----- shows just the values in a hash table
 
 
 PIPING                           <----- Powershell is object oriented so it is slightly different from bash
+get-member <----- gives us attributes and properties
 get-service | get-member         <----- pipes the result from a list of services into their attributes, this is giving us more information than just get-service
 
 get-member gives us a cmdlet's, and other object's, methods and properties
@@ -54,6 +55,7 @@ get-service | groupt-object -Property status        <------ counts how many ther
 "1", "7", "10", "8", "2", "3" | sort -property { [Int]$_ }      <------- puts the order of these strings in order by their numerical representation
 1..10 | sort -property { get-random }
 
+| compare-object   <------ Helps you compare two different outputs
 
 
 
