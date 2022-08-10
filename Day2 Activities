@@ -39,7 +39,7 @@ $employee3.Add("Status","Entry Level")
 
 
 
-# ACTIVITY 2
+# ACTIVITY 6
 
 # Display the start time of the earliest and latest running processes
 get-process | where-object processname -ne "Idle" | sort -property starttime | select-object -first 1 -last 1 | format-table name,starttime
@@ -59,7 +59,7 @@ Get-hotfix | sort -property installedon | select-object -property installedon,ho
 Get-hotfix | sort -property description | select-object -property description,installedon,hotfixid
 
 
-_______________________________________________________ACTIVITY 7______________________________________________________________________________________________
+# ACTIVITY 7
 
 $compinfo = Get-WmiObject Win32_ComputerSystem
 $osinfo = Get-WmiObject Win32_OperatingSystem
@@ -71,7 +71,7 @@ $mycomp = New-Object object
 
 $mycomp | Add-Member -MemberType NoteProperty -Name ComputerName -Value $compinfo.Name
 $mycomp | Add-Member -MemberType NoteProperty -Name OperatingSystem -Value $osinfo.Caption
-$mycomp | Add-Member -MemberType NoteProperty -Name Version -Value $osinfo.info
+$mycomp | Add-Member -MemberType NoteProperty -Name Version -force -Value $osinfo.version
 $mycomp | Add-Member -MemberType NoteProperty -Name Manufacturer -Value $biosinfo.Manufacturer
 $mycomp | Add-Member -MemberType NoteProperty -Name Disks -force -Value $diskinfo.DeviceID
 
