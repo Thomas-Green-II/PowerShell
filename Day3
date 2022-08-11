@@ -71,7 +71,7 @@ function <function name> {
 
 
 MANDATORY PARAMETERS
-
+Sytax for establishing mandatory parameters:
 function <function name> {
   param(
     [Parameter(Mandatory=$true)]
@@ -91,7 +91,7 @@ Example - function Mando-params {
 }
 
 
-To avoid blank input
+To avoid blank input:
 Example - function Mando-params {
   param(
     [Parameter(Mandatory=$true)]
