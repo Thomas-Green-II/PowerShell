@@ -22,7 +22,7 @@ function <function name> ($parameter name) { <function code goes here> }
               }
 More than one Parameter:
  function <function name> ($parameter1,$parameter2) { <function code goes here> }
-  Example - MAny-Params ($value1,$value2) {
+  Example - Many-Params ($value1,$value2) {
             if ($value1 -gt $value2) {
               write-host "value1" -foregroundcolor Green -nonewline
               write-host " is bigger than " -nonewline
@@ -34,3 +34,72 @@ More than one Parameter:
               write-host "value1" -foregroundcolor Green -nonewline
             }
             else
+
+
+PARAMETERS
+Syntax for making parameters:
+function <function name> {
+param(
+  $Parameter='<Default Value>',$Parameter2='<Default Value>'
+  )
+  <function code>
+}
+
+Example - function <Default-Params> {
+          param(
+            $Parameter1='90',$Parameter2='65535'
+          )
+            "The parameters passed are $Parameter1 and $Parameter2"
+          }
+          
+Default-Params    =    The parameters passed are 90 and 65535
+Default-Params 445 3389   =    The paramaters passed are 445 and 3389
+
+
+
+SWITCH PARAMETERS
+To declare a switch paramter, Syntax:
+function <function name> {
+  param(
+    [Switch]
+    $SwitchParam
+  )
+  <function code>
+}
+
+
+
+
+MANDATORY PARAMETERS
+
+function <function name> {
+  param(
+    [Parameter(Mandatory=$true)]
+      #The "Mandatory=$true" forces the function to rrequest a paramter if no Argument was specified when calling the function
+    $param
+  )
+  <function code>
+}
+
+
+Example - function Mando-params {
+  param(
+    [Parameter(Mandatory=$true)]
+    $param
+  )
+  "The argument `"$param`" was mandatory for the parameter"
+}
+
+
+To avoid blank input
+Example - function Mando-params {
+  param(
+    [Parameter(Mandatory=$true)]
+    $param
+  )
+  while ([string]::IsNullorWhiteSpace($param)) {                      <-------- "[string]::IsNullorWhiteSpace($param)" compare to see if something is null
+    $param = read-host -prompt "enter a string"
+    #If the parameter is Null/empty, it will prompt for a string of characters
+    }
+  "The argument `"$param`" was mandatory for the parameter"
+}
