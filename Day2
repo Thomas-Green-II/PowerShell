@@ -194,9 +194,9 @@ elseif ($x -eq 2) {
 elseif 9$x -gt 1) {
   Write-host "Mary"
 }
-else
+else {
   "who am i"
-  
+}
 
 
 
