@@ -137,7 +137,52 @@ function <function name> {
 "The arg `"param'` was mandatory for the paramter"
 
 help-param = will assist on how to see what the help message is
+
+
+
+PARAMETER SETS
+function cmdlet-function {
+   [cmdletBinding(Default='Tacos')]         <------ allows to add more capabilities to a function
+      param(
+        [Paramter(ParameterSetName="Tacos",Mandatory=$true)]   <---- adding "Position=#, in between the name set and the "Mandatory" makes this positional
+        $flavor,
+        [Paramter(ParameterSetName="Tacos",Mandatory=$true)]
+        $cheese,
+        [Paramter(ParameterSetName="Tacos",Mandatory=$true)]
+        $spice,
+        [Paramter(ParameterSetName="Burritos",Mandatory=$true)]
+        $beans,
+        [Paramter(ParameterSetName="Burritos",Mandatory=$true)]
+        $rice,
+        )
+        
+        $ParamterSetName = PSCmdlet.ParamterSetName
+        "The $ParameterSetName Parameter Set was utilized"
+}
   
-  
-  
+      cmdlet-function          <------ will only apply to taco unless you specify the parameter set burritos
+      cmdlet-function -beans "blackeyedpeas" -rice "dirty"     <------ signifies burritos is being used
+      
+      
+      
+      CMDLET BINDING
+      function Function-Blocks {
+      [cmdletbinding()]
+        param()
+        
+        Begin {               <------ This block is used to provide optional one-time preprocessing for the function
+                                      Does whatever is in here prior to anything else in the function
+        }
+        
+        Process{              <------- This block is used to provide record-by-record processing for the function
+                                       Executes code as many times as necessary based off of how many objects are sent to the function through the
+                                       powershell pipeline
+                                       Can use '$_' to grab the individual values passed to the function without having to call on $input or $args
+       }
+       
+       End {                  <------- This block is used to provide optional one-time post-processing for the function
+                                       Executes this code at the end of the function prior to exiting the function
+       }
+        
+     }   
   
