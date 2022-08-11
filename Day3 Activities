@@ -8,3 +8,42 @@ function Get-SquareNum ($squ) { $squ * $squ }
 
 # Create a function that takes three (3) arguments and returns the product of the arguments.
 function Get-Product ($dig1,$dig2,$dig3) {$dig1 * $dig2 * $dig3}
+
+
+
+# Activity 11
+# Create a function that takes two(2) integer values, $a and $b, that are the lengths of two(2) legs of a right
+# triangle and returns the length of the hypotenuse.
+function hypotenuse ($a,$b) {[math]::Sqrt(($a * $a) + ($b * $b)) }
+
+
+
+#Create a function that takes two(2) values, $a and $b, as two(2) angles in degrees of a triangle. Return the value of the missing angle.
+ function angle ($a,$b) {180 - ($a + $b)}
+    
+
+
+#Create a function that takes the following as mandatory parameters: First name, last name, age, weight in pounds
+function Postitonal-Params{
+  param(
+    [Parameter(mandatory=$true)]
+    $FirstName,
+    [Parameter(mandatory=$true)]
+    $LastName,
+    [Parameter(mandatory=$true)]
+    [int]
+    $Age,
+    [Parameter(mandatory=$true)]
+    [int]
+    $Weight
+
+    )
+    $kg=($weight * 0.453592)
+    $ordered = [ordered]@{}
+    $ordered.add("First Name",$FirstName)
+    $ordered.add("Last Name",$LastName)
+    $ordered.add("Age",$Age)
+    $ordered.add("Weight",$kg)
+
+    $ordered
+}
