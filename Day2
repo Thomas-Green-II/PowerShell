@@ -80,7 +80,7 @@ Minimum  :
 Property : length
 
 
-
+-expandproperty | gets rid of the header of the property, therefore only giving you the results you need
 
 WRITE-HOST VS WRITE-OUTPUT
 Write-host- Prints a reult to the screen (YOU CAN NOT PIPE WITH WRITE HOST)
