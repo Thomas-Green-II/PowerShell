@@ -39,9 +39,7 @@ More than one Parameter:
 PARAMETERS
 Syntax for making parameters:
 function <function name> {
-param(
-  $Parameter='<Default Value>',$Parameter2='<Default Value>'
-  )
+param($Parameter='<Default Value>',$Parameter2='<Default Value>')
   <function code>
 }
 
@@ -67,6 +65,7 @@ function <function name> {
   <function code>
 }
 
+Boolean logic, On or off
 
 
 
@@ -83,12 +82,12 @@ function <function name> {
 
 
 Example - function Mando-params {
-  param(
-    [Parameter(Mandatory=$true)]
-    $param
-  )
-  "The argument `"$param`" was mandatory for the parameter"
-}
+            param(
+              [Parameter(Mandatory=$true)]
+              $param
+            )
+            "The argument `"$param`" was mandatory for the parameter"
+          }
 
 
 To avoid blank input:
@@ -103,3 +102,42 @@ Example - function Mando-params {
     }
   "The argument `"$param`" was mandatory for the parameter"
 }
+
+
+
+
+POSITIONAL PARAMETERS
+function Postitonal-Params {
+  param(
+    [Paramter(mandatory=$true,position=0)]
+    [int]
+    $number
+    [Paramter(mandatory=$true,position=1)]
+    [string]
+    $string
+    [Paramter(mandatory=$true,position=1)]
+    [string]
+    $anotherstring
+    )
+    <Function code>
+}
+
+    write-ouput "$number is the first positional parameter"
+    write-output "$string is the second positional parameter"
+    write-output "$anotherstring is the third positional parameter"
+    
+
+
+ADVANCED FUNCTIONS
+function <function name> {
+  param(
+  [Paramter(Mandatory=$true,Helpmessage=<message>)]
+  $param
+)
+"The arg `"param'` was mandatory for the paramter"
+
+help-param = will assist on how to see what the help message is
+  
+  
+  
+  
