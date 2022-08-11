@@ -1,0 +1,36 @@
+FUNCTIONS
+Syntax:
+function <function name> { <function code goes here> }
+  Example - function Hello-World { 'Hello World!!!' }
+
+To call a function just type out the name of the function
+  Example - Hello-World
+            Hello World!!!
+Functions only exist for that individual powershell session/script
+  Functions are stored in the function PSDrive
+Get-Childitem function:*    <------- To view all the functions in the PS Session
+Get-Content function:Hello-World      <------ See what the function does rather than call the function
+
+Syntax for a function that uses parameters:
+function <function name> ($parameter name) { <function code goes here> }
+  Example - function basic-param ($value) {
+              if ($value) {
+                 Write-Host "The parameter is $value" -Forgroundcolor Green -Nonewline
+              }
+              else {
+                 Write-Host "There is no paramter being passed" -Foregroundcolor Red
+              }
+More than one Parameter:
+ function <function name> ($parameter1,$parameter2) { <function code goes here> }
+  Example - MAny-Params ($value1,$value2) {
+            if ($value1 -gt $value2) {
+              write-host "value1" -foregroundcolor Green -nonewline
+              write-host " is bigger than " -nonewline
+              write-host "value2" -foregroundcolor Red -nonewline
+            }
+            elif ($value2 -gt $value1) {
+              write-host "value2" -foregroundcolor Red -nonewline
+              write-host " is bigger than " -nonewline
+              write-host "value1" -foregroundcolor Green -nonewline
+            }
+            else
