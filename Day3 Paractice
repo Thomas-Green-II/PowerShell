@@ -1,0 +1,10 @@
+# Activity 10
+
+# Write a function that returns the Ordinal date of the current date.
+function Get-OrdinalDate{get-date | select-object -expandproperty dayofyear}
+     
+# Create a function that takes a number(n) as an argument and returns the square(n^2) of the number.
+function Get-SquareNum ($squ) { $squ * $squ}
+
+# Create a function that takes three (3) arguments and returns the product of the arguments.
+function Get-Product ($dig1,$dig2,$dig3) {$dig1 * $dig2 * $dig3}
