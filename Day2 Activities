@@ -76,3 +76,82 @@ $mycomp | Add-Member -MemberType NoteProperty -Name Manufacturer -Value $biosinf
 $mycomp | Add-Member -MemberType NoteProperty -Name Disks -force -Value $diskinfo.DeviceID
 
 $mycomp
+
+
+
+
+# ACTIVITY 9
+Part 1
+
+Use an array to iterate and open the following
+
+
+Notepad
+MS Edge
+MSpaint
+
+
+Query the processes
+
+Kill the processes from PowerShell
+
+$arr = 'notepad','msedge','mspaint'
+
+foreach ($i in $arr)
+{
+start-process $i
+(get-process $i).kill()
+}
+
+
+
+
+Part 2
+Use an array to iterate and open the following
+
+Notepad
+MS Edge
+MSpaint
+
+$arr = 'notepad','msedge','mspaint'
+
+Query the processes
+foreach ($i in $arr)
+{
+start-process $i
+get-process $i
+}
+
+Save the ProcessIDs to a text file called procs.txt
+$file = "$pwd\procs.txt"
+
+foreach($proc in $arr){
+    get-process | where-object{$_.Name -like $proc} | Foreach-object{add-content $file $_.Id} }
+
+Iterate through the ProcessIDs in the text file and kill them
+get-content .\procs.txt | foreach-object{stop-process -id $_}
+
+
+
+
+Part 3
+
+Use an array to iterate and open the following
+$arr = 'notepad','msedge','mspaint'
+
+Notepad
+MS Edge
+MSpaint
+
+Query the processes and display only the following information in order by process ID
+
+
+Process ID
+foreach($proc in $arr){
+    get-process | where-object{$_.Name -like $proc} | Format-Table -property id, name, starttime, totalprocessortime, VirtualMemorySize,
+    WorkingSet64 }
+    
+Process Name
+The time the process started
+The amount of time the process has spent on the processor
+The amount of memory assigned to the process
