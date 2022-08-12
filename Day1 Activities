@@ -129,6 +129,7 @@ write-host "$var1" / "$var2" = "$quo"
 
 # ACTIVITY 4
 
+
 # Create an array containing a range with a random starting and stopping point.  The starting point will be a random number from -10 through 0.
 # The ending point will be a random number from 1 through 20.
 
