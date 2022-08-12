@@ -138,9 +138,9 @@ multi[1][2][3] = $error
 
 
 NEED TO KNOW AUTOMATIC VARIABLES
-$_             <-------- current object in the pipeline
-$args          <-------- array of values for undeclared paramters
-$input         <-------- an enumerator which enumerates everythiong that has poassed through a function
+$_             <-------- current object in the pipeline    USE WHEN THERE IS A PIPELINE
+$args          <-------- array of values for undeclared paramters               
+$input         <-------- an enumerator which enumerates everything that has passed through a function
 $profile       <-------- Contains the full path of the powershell profile for the current user and the current host application.
 $null          <-------- the void, does not mean "empty"
 $true          <-------- true
