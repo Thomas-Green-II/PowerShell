@@ -18,3 +18,17 @@ $Gate=(ipconfig | select-object -last 3 ).split(":")[-5]
 }
 
 
+
+
+
+# Create a function that extracts all the URLs found in the file "dns.txt" and outputs URLs, the amount of times the 
+# URL is found in the file and the total amount of URLs found.
+
+Get-ChildItem C:\Users\student\Desktop\dns.txt.txt `
+  | Get-Content `
+  | Select-String -Pattern 'www[\.][\w]{1,256}[\.][\w]{3}' `
+  | % { $_.Matches } `
+  | % { $_.Value } `
+  | Group-Object -Property $_ `
+  | Sort-Object -Property Count -Descending `
+  | Select-Object Count, Name
