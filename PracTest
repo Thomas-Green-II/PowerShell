@@ -3,6 +3,8 @@ function q1($var1,$var2,$var3,$var4) {
     
     $var1*$var2*$var3*$var4
 }
+
+
 function q2($arr,$rows,$cols,$key) {
     <# Search the 2 dimensional array for the first occurance of key at column index 0
        and return the value at column index 9 of the same row.
@@ -17,6 +19,8 @@ function q2($arr,$rows,$cols,$key) {
         return -1
 
 }
+
+
 function q3 {
     <# In a loop, prompt the user to enter positive integers one at time.
        Stop when the user enters a -1. Return the maximum positive
@@ -38,6 +42,8 @@ function q3 {
         
 
 }
+
+
 function q4($filename,$whichline) {
     <# Return the line of text from the file given by the `$filename
 	   argument that corresponds to the line number given by `$whichline.
@@ -48,6 +54,7 @@ function q4($filename,$whichline) {
 
 }
 
+
 function q5($path) {
     <# Return the child items from the given path sorted
        ascending by their Name
@@ -55,6 +62,7 @@ function q5($path) {
 
     get-childitem $path | sort -property name
 }
+
 
 function q6 {
     <# Return the sum of all elements provided on the pipeline
@@ -66,11 +74,15 @@ function q6 {
         }
         return $sum
 }
+
+
 function q7 {
 	<# Return only those commands whose noun is process #>
     get-command -noun process
 
 }
+
+
 function q8($adjective) {
     <# Return the string 'PowerShell is ' followed by the adjective given
 	   by the `$adjective argument
@@ -93,6 +105,8 @@ function q9($addr) {
 
 
 }
+
+
 function q10 ($filepath,$lasthash) {
     <# Return `$true if the contents of the file given in the
        `$filepath argument have changed since `$lasthash was
