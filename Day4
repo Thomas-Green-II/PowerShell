@@ -20,7 +20,13 @@ $HowManyNeeded = "One Petabyte can store $(1PB / 2.39MB) Instances of DOOM (1993
 ("C:\Windows\System32\System Management\Distribution\Client" -split('\\'))[-1]   <---- grab the object at index one after the split
 
 
-"PCS" -join('=Graduated COSC')
+$arr = @('PSC', 'We_Graduated COSC', 'Happiness')
+$arr -join('=')                                           <-------- joins each string with an =
+
+
+"I really love the weather in California" -replace 'California','Florida'   <------ replace one word with another
+
+
 
 REGEX
 \d = digits
