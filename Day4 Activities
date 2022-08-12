@@ -32,3 +32,9 @@ Get-ChildItem C:\Users\student\Desktop\dns.txt.txt `
   | Group-Object -Property $_ `
   | Sort-Object -Property Count -Descending `
   | Select-Object Count, Name
+
+ # or
+
+  $dnsf = get-content C:\Users\student\Desktop\dns.txt.txt
+  $dnsm = $dnsf -imatch "www.[A-Za-z0-9]{,}.com" | select-string "www.*.com"
+  $dnsm.matches.value | sort | group | Format-table -property Count, name -HideTableHeaders
