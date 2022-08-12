@@ -1,4 +1,6 @@
 # ACTIVITY 5
+
+
 Create two empty hash tables with the following names:
 
 $employee1 = @{}
@@ -41,6 +43,7 @@ $employee3.Add("Status","Entry Level")
 
 # ACTIVITY 6
 
+
 # Display the start time of the earliest and latest running processes
 get-process | where-object processname -ne "Idle" | sort -property starttime | select-object -first 1 -last 1 | format-table name,starttime
 
@@ -60,6 +63,7 @@ Get-hotfix | sort -property description | select-object -property description,in
 
 
 # ACTIVITY 7
+
 
 $compinfo = Get-WmiObject Win32_ComputerSystem
 $osinfo = Get-WmiObject Win32_OperatingSystem
@@ -81,6 +85,8 @@ $mycomp
 
 
 # ACTIVITY 9
+
+
 Part 1
 
 Use an array to iterate and open the following
