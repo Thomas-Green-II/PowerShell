@@ -1,0 +1,20 @@
+ACTIVITY 13
+
+
+Create a function that extracts your current IP, Subnet and Gateway and outputs them in the following format:
+IP: 192.168.0.1
+Subnet: 255.255.255.0
+Gateway: 192.168.1.1
+
+
+function addr {
+$ip=(ipconfig | select-object -last 3 ).split(":")[-1]
+$subnet=(ipconfig | select-object -last 3 ).split(":")[-3]
+$Gate=(ipconfig | select-object -last 3 ).split(":")[-5]
+
+"IP:" + $ip                               <------- POWERSHELL WILL PRINT IT TO THE SCREEN AUTOMATICALLY, STOP USING WRITE HOST
+"Subnet:" + $subnet
+"Gateway:" + $gate
+}
+
+
