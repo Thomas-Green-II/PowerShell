@@ -5,6 +5,7 @@ function q1($var1,$var2,$var3,$var4) {
 }
 
 
+
 function q2($arr,$rows,$cols,$key) {
     <# Search the 2 dimensional array for the first occurance of key at column index 0
        and return the value at column index 9 of the same row.
@@ -17,8 +18,9 @@ function q2($arr,$rows,$cols,$key) {
             }
         }
         return -1
-
 }
+
+
 
 
 function q3 {
@@ -39,9 +41,9 @@ function q3 {
     }
     return $high
   }      
-        
-
 }
+
+
 
 
 function q4($filename,$whichline) {
@@ -51,8 +53,9 @@ function q4($filename,$whichline) {
 	#>
         $content = Get-content -path $filename
         return $content[$whichline]
-
 }
+
+
 
 
 function q5($path) {
@@ -62,6 +65,8 @@ function q5($path) {
 
     get-childitem $path | sort -property name
 }
+
+
 
 
 function q6 {
@@ -76,11 +81,14 @@ function q6 {
 }
 
 
+
+
 function q7 {
 	<# Return only those commands whose noun is process #>
     get-command -noun process
-
 }
+
+
 
 
 function q8($adjective) {
@@ -89,6 +97,8 @@ function q8($adjective) {
 	#>    
         "Powershell is $adjective"
 }
+
+
 
 function q9($addr) {
 	<# Return `$true when the given argument is a valid IPv4 address,
@@ -102,9 +112,9 @@ function q9($addr) {
       # or
 
       return $addr -as [IPAddress] -as [Bool]
-
-
 }
+
+
 
 
 function q10 ($filepath,$lasthash) {
